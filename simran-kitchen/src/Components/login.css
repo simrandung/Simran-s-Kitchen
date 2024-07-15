@@ -1,0 +1,99 @@
+.login-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    background-color: #3074af;
+    color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    margin-left: 2%;
+    border-radius: 25%;
+    margin-top: 0.5%;
+    height: 80%; /* Adjust height as needed */
+}
+
+.login-navbar h2 {
+    color: #ffffff;
+    margin-left: 2%; /* Adjust margin for spacing */
+    font-size: 1.5rem; /* Base font size */
+}
+
+.login-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+.login-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1; /* Send the image to the background */
+}
+
+.login-form-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 15px;
+    border-color: #FFFFFF;
+    max-width: 550px; /* Increased max-width */
+    margin-left: 100px; /* Increased margin-left */
+    z-index: 1; /* Bring the form to the front */
+}
+
+.login-form {
+    width: 100%; /* Ensure form fills the container */
+}
+
+.login-form h2 {
+    margin-top: 0;
+    margin-left: 200px;
+}
+
+.logo-form {
+    position: absolute;
+    top: 18px; /* Adjust as needed */
+    left: 150px; /* Adjust as needed */
+    border-radius: 50%;
+    width: 12%;
+}
+.login-button {
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .login-navbar h2 {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+}
+@media (max-width: 480px) {
+    .login-navbar {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 5px 10px; /* Smaller padding for smaller screens */
+    }
+
+    .login-navbar h2 {
+        font-size: 1rem; /* Further reduce font size for very small screens */
+        margin-left: 1%; /* Adjust margin for smaller screens */
+    }
+
+    .logo {
+        height: 60%; /* Adjust logo height for smaller screens */
+    }
+}

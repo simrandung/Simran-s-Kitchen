@@ -1,0 +1,430 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar-h {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #3074af;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.name {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+
+.navbar-left-h {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right-h {
+    /* display: flex; */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.logo {
+    height: 3rem;
+    /* width: auto; */
+    /* margin-right: 3rem;
+    padding-left: 3rem; */
+    /* border-radius: 5%; */
+    margin-left: 5%;
+    /* padding-left: 1.5rem; */
+    border-radius: 15%;
+    margin-top: 0.5%;
+}
+
+.desktopMenuListItem {
+    margin: 0 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.desktopMenuListItem:hover {
+    color: rgb(54, 76, 141);
+    border-bottom: 2px solid rgb(32, 45, 84);
+}
+
+.desktopMenuBtn {
+    background: rgb(32, 45, 84);
+    color: beige;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    margin-left: 1rem; 
+    margin-right: 0.5rem;
+    
+    text-align: center;
+    cursor: pointer;
+    font-size: 1rem;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.desktopMenuBtn:hover {
+    background-color: rgb(54, 76, 141);
+}
+
+/* Background Images */
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust height as needed */
+    overflow: hidden;
+    background-size: cover;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    margin-top: 2%;
+    animation: popUp 18s infinite; /* 18 seconds for full cycle including delay */
+}
+
+.image1 {
+    animation-delay: 0s;
+}
+
+.image2 {
+    animation-delay: 6s; /* One-third of the cycle time to ensure they alternate */
+}
+
+.image3 {
+    animation-delay: 12s; /* Two-thirds of the cycle time to ensure they alternate */
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    10% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    40% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 80%) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar-left, .navbar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navbar-right {
+        justify-content: flex-start;
+    }
+
+    .desktopMenuListItem,
+    .desktopMenuBtn {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+    }
+
+    .desktopMenuBtn {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 80%) {
+    .desktopMenuListItem {
+        font-size: 0.9rem;
+    }
+
+    .desktopMenuBtn {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
+
+.latest-recipe-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.recipe-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center items horizontally */
+}
+
+.recipe-card {
+    width: calc(40% - 40px); /* Adjust width as per your design */
+    max-width: 400px; /* Maximum width for larger screens */
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    text-align: left;
+}
+
+.recipe-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.read-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    background-color: #6c757d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.read-more-button:hover {
+    background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+    .recipe-card {
+        width: calc(50% - 20px); /* Two cards per row on smaller screens */
+        max-width: none; /* Remove max-width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe-card {
+        width: 100%; /* Full width on extra small screens */
+        max-width: none; /* Remove max-width */
+    }
+}
+/* About Me Styles */
+.about-me-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.about-me-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.about-me-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.about-me-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #495057;
+    font-family: 'Georgia', serif; /* Attractive font for paragraph */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.about-me-image {
+    width: 700px;
+    height: 420px;
+    border-radius: 20px; /* Adjust border radius to create rounded corners */
+    overflow: hidden; /* Ensures the image stays within the rounded shape */
+  }
+  
+  .about-me-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the rounded shape */
+  }
+  @media (max-width: 768px) {
+    .about-me-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .about-me-content {
+        max-width: none; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Add space between content and image */
+    }
+
+    .about-me-image {
+        max-width: none; /* Full width image on smaller screens */
+    }
+}
+
+/* Testimonials Styles */
+.testimonials-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.testimonial-card {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card.active {
+    display: flex;
+}
+
+.testimonial-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #6c757d;
+}
+.footer-div {
+    background-color: #3074af; /* Same as navbar background color */
+    padding: 8px 0;
+    text-align: center;
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+     z-index: 100; /*Ensure the footer is above other elements */
+}
+
+
+.footer-content p {
+    /* margin: 0; */
+    font-size: 14px;
+    color: #6c757d; /* Text color similar to navbar */
+}
+
+/* Modal Styles */
+.Modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 999;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.modal-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+.modal-ok-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+

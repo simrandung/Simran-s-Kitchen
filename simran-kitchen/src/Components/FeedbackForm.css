@@ -1,0 +1,221 @@
+/* FeedbackForm.css */
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #3074af;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.name {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.logout-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.logout-button:hover {
+    background-color: #ff4500;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.nav-links-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.nav-links-mobile a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links-mobile a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-right {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .nav-links-mobile {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: 0;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger .line {
+        background-color: white;
+        width: 25px;
+        height: 3px;
+        margin: 3px;
+        transition: 0.4s;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 40px;
+    }
+
+    .name {
+        font-size: 1.2em;
+    }
+
+    .nav-link {
+        font-size: 0.9em;
+    }
+
+    .logout-button {
+        padding: 8px 16px;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .navbar {
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+/* Adjustments for FeedbackForm component */
+
+.Box {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+.MuiTextField-root {
+    margin-bottom: 20px;
+}
+
+.MuiButton-root {
+    margin-top: 20px;
+}
+
+.MuiRating-root {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .Box {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Box {
+        margin: 5px;
+    }
+
+    .name {
+        font-size: 1em;
+    }
+}
